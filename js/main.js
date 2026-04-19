@@ -3,34 +3,54 @@ const buttons = document.querySelectorAll("button");
 const specialChars = ["%", "*", "/", "-", "+", "="];
 
 let output = "";
+//Define fuction to calculate based on button ckicked
+const calclate = (btnValue) => {
+  // factorial
+  const factorial = (n) => {
+    if (n < 0) return NaN;
+    if (n === 0) return 1;
+    let res = 1;
+    for (let i; i <= n; i++) {
+      res *= i;
+    }
+    return res;
+  };
 
+  const transformExpression = (expr) => {
+    return (
+      expr
+        // constants
+        .replace(/π/g, "Math.PI")
+        .replace(/\be\b/g, "Math.E")
 
-const factorial = (n) => {
-  n = Number(n);
-  if (n < 0) return NaN;
-  if (n === 0) return 1;
+        // sqrt
+        .replace(/√\((.*?)\)/g, "Math.sqrt($1)")
 
-  let res = 1;
-  for (let i = 1; i <= n; i++) {
-    res *= i;
-  }
-  return res;
-};
+        // power x^y
+        .replace(/(\d+)\^(\d+)/g, "Math.pow($1,$2)")
 
-const transformExpression = (expr) => {
-  return expr
-    .replace(/π/g, "Math.PI")
-    .replace(/\be\b/g, "Math.E")
-    .replace(/√\((.*?)\)/g, "Math.sqrt($1)")
-    .replace(/(\d+)\^(\d+)/g, "Math.pow($1,$2)")
-    .replace(/(\d+)²/g, "Math.pow($1,2)")
-    .replace(/log\((.*?)\)/g, "Math.log10($1)")
-    .replace(/ln\((.*?)\)/g, "Math.log($1)")
-    .replace(/\|(.*?)\|/g, "Math.abs($1)")
-    .replace(/exp\((.*?)\)/g, "Math.exp($1)")
-    .replace(/(\d+)!/g, "factorial($1)")
-    .replace(/%/g, "/100");
-};
+        // square
+        .replace(/(\d+)²/g, "Math.pow($1,2)")
+
+        // log
+        .replace(/log\((.*?)\)/g, "Math.log10($1)")
+
+        // ln
+        .replace(/ln\((.*?)\)/g, "Math.log($1)")
+
+        // abs
+        .replace(/\|(.*?)\|/g, "Math.abs($1)")
+
+        // exp
+        .replace(/exp\((.*?)\)/g, "Math.exp($1)")
+
+        // factorial
+        .replace(/(\d+)!/g, "factorial($1)")
+
+        // percentage
+        .replace(/%/g, "/100")
+    );
+  };
 
 const calclate = (btnValue) => {
   if (btnValue === "=" && output !== "") {
