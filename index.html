@@ -1,41 +1,62 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>caluclator</title>
-    <link rel="stylesheet" href="/css/style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <input type="text" class="display" />
-      <div class="buttons">
-        <button class="operator" data-value="AC">AC</button>
-        <button class="operator" data-value="DEL">DEL</button>
-        <button class="operator" data-value="%">%</button>
-        <button class="operator" data-value="/">/</button>
 
-        <button data-value="7">7</button>
-        <button data-value="8">8</button>
-        <button data-value="9">9</button>
-        <button class="operator" data-value="*">*</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>caluclator</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
 
-        <button data-value="4">4</button>
-        <button data-value="5">5</button>
-        <button data-value="6">6</button>
-        <button class="operator" data-value="-">-</button>
+<body>
+  <div class="container">
+    <input type="text" class="display" />
+    <div class="buttons">
+      <!-- Scientific Row 1 -->
+      <button data-value="π">π</button>
+      <button data-value="e">e</button>
+      <button data-value="(">(</button>
+      <button data-value=")">)</button>
 
-        <button data-value="1">1</button>
-        <button data-value="2">2</button>
-        <button data-value="3">3</button>
-        <button class="operator" data-value="+">+</button>
-        
-        <button data-value="0">0</button>
-        <button data-value="00">00</button>
-        <button class="operator" data-value=".">.</button>
-        <button class="operator" data-value="=">=</button>
-      </div>
+      <!-- Scientific Row 2 -->
+      <button data-value="√(">√</button>
+      <button data-value="^">xʸ</button>
+      <button data-value="²">x²</button>
+      <button data-value="!">n!</button>
+
+      <!-- Scientific Row 3 -->
+      <button data-value="log(">log</button>
+      <button data-value="ln(">ln</button>
+      <button data-value="exp(">exp</button>
+      <button data-value="|">|x|</button>
+
+      <button class="operator" data-value="AC">AC</button>
+      <button class="operator" data-value="DEL">DEL</button>
+      <button class="operator" data-value="%">%</button>
+      <button class="operator" data-value="/">/</button>
+
+      <button data-value="7">7</button>
+      <button data-value="8">8</button>
+      <button data-value="9">9</button>
+      <button class="operator" data-value="*">*</button>
+
+      <button data-value="4">4</button>
+      <button data-value="5">5</button>
+      <button data-value="6">6</button>
+      <button class="operator" data-value="-">-</button>
+
+      <button data-value="1">1</button>
+      <button data-value="2">2</button>
+      <button data-value="3">3</button>
+      <button class="operator" data-value="+">+</button>
+
+      <button data-value="0">0</button>
+      <button data-value="00">00</button>
+      <button class="operator" data-value=".">.</button>
+      <button class="operator" data-value="=">=</button>
     </div>
-    <script src="/js/main.js"></script>
-  </body>
+  </div>
+  <script src="/js/main.js"></script>
+</body>
+
 </html>
